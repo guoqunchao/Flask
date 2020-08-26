@@ -9,14 +9,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return url_for('list',id=1,page=2)
+    return url_for('list',id=1,page=2) # /post/list/1/?page=2
 
 @app.route('/post/list/<id>/')
-def list():
+def list(id):
     return 'list'
 
 @app.route('/detial/<id>/')
-def detial():
+def detial(id):
     return 'detial;'
 
 if __name__ == '__main__':
