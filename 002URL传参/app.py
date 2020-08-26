@@ -1,10 +1,19 @@
-from flask import Flask
+from flask import Flask,request
 import uuid
 
 app = Flask(__name__)
 
 print(uuid.uuid4())
+
 '''
+接受用户传递的请求:
+第一种：使用path的形式（将参数嵌入到路径中）；
+第二种：使用查询字符串的方式，就是通过 "?key=value" 的形式传递；
+'''
+
+'''
+第一种:路径传递
+
 int:id 指定传参数据类型
 string: 默认的数据类型，接受没有任何斜杠 "\/" 的文本；
 int: 接受整型;
@@ -47,6 +56,19 @@ def type_uuid(id):
 def type_any(url_path,id):
 
     return "您请求的路径为：%s  id为:%s" %(url_path,id)
+
+
+'''
+第二种：使用查询字符串方式
+'''
+# 通过?号的形式传递参数
+@app.route('/d')
+def d():
+    wd = request.args.get('wd')
+    ie = request.args.get('ie')
+    return "您通过查询字符串的方式传递参数为 %s %s" %(wd,ie)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
