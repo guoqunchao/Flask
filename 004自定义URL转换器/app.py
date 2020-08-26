@@ -15,7 +15,6 @@ class TelephoneConveter(BaseConverter):
 class ListConveter(BaseConverter):
     def to_python(self, value):
         return value.split('+')
-
 app.url_map.converters['tele'] = TelephoneConveter
 app.url_map.converters['list'] = ListConveter
 
