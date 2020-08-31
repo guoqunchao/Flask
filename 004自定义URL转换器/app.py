@@ -31,4 +31,4 @@ def posts(board):
     return "您请求的内容为：%s" %board
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0',port=80)
