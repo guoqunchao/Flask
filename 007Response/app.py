@@ -18,9 +18,11 @@ def getJson():
     return jsonify(dict)
 
     # 方法2
-    # return Response(json.dumps(dict),content_type='application/json')
+    # resp = Response(json.dumps(dict),content_type='application/json')
+    # return resp
 
     # 方法3
-    # return  make_response(jsonify(dict),200)
+    # resp = make_response(jsonify(dict),200)
+    # return resp
 if __name__ == '__main__':
     app.run(debug=True)
