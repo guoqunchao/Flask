@@ -10,7 +10,7 @@ def index():
         'age':18,
         'children':{
             'name':'xiao a',
-            'heigh': 180
+            'heigh':180,
         }
     }
     return render_template('index.html',**context)
